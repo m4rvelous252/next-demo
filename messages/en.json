@@ -1,0 +1,15 @@
+{
+	"authorized": "Authorized",
+	"greeting": "Hello",
+	"linkToProduct": "Go to Product",
+	"auth": {
+		"title": "Login",
+		"username": "Username",
+		"password": "Password",
+		"login": "Login",
+		"logout": "Logout"
+	},
+	"product": {
+		"title": "Product"
+	}
+}

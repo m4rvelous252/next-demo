@@ -1,0 +1,15 @@
+{
+	"authorized": "Đã đăng nhập",
+	"greeting": "Xin Chào",
+	"linkToProduct": "Đi đến trang sản phẩm",
+	"auth": {
+		"title": "Đăng nhập",
+		"username": "Tên người dùng",
+		"password": "Mật khẩu",
+		"login": "Đăng nhập",
+		"logout": "Đăng xuất"
+	},
+	"product": {
+		"title": "Sản phẩm"
+	}
+}
