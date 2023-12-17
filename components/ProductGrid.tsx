@@ -7,7 +7,7 @@ interface ProductGridProps {
 
 const ProductGrid = ({ products }: ProductGridProps) => {
 	return (
-		<div className='grid grid-cols-auto-fit'>
+		<div className='grid grid-cols-auto-fit gap-4'>
 			{products.map((product) => (
 				<ProductCard key={product.id} product={product} />
 			))}

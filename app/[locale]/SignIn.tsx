@@ -1,12 +1,13 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { signIn } from "next-auth/react";
 
 const SignIn = () => {
 	return (
-		<button onClick={() => signIn()} className='px-4 py-3 bg-slate-400 rounded'>
+		<Button onClick={() => signIn()} className='px-4 py-3 bg-slate-400 rounded'>
 			SignIn
-		</button>
+		</Button>
 	);
 };
 

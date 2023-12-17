@@ -1,6 +1,7 @@
 "use client";
 
 import ProductGrid from "@/components/ProductGrid";
+import { Button } from "@/components/ui/button";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { z } from "zod";
@@ -58,12 +59,12 @@ const ApiProduct = () => {
 	if (isError) return <div>Error</div>;
 
 	return (
-		<div className='grid'>
-			<div className='flex'>
-				<button onClick={() => setPage(page - 1)} disabled={page === 1}>
+		<div className='grid gap-2'>
+			<div className='flex gap-2'>
+				<Button onClick={() => setPage(page - 1)} disabled={page === 1}>
 					Previous
-				</button>
-				<button onClick={() => setPage(page + 1)}>Next</button>
+				</Button>
+				<Button onClick={() => setPage(page + 1)}>Next</Button>
 			</div>
 			<ProductGrid products={data ?? []} />
 		</div>
