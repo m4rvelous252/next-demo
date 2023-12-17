@@ -14,7 +14,7 @@ const LoginPage = () => {
 	const callbackUrl = params.get("callbackUrl") ?? "/";
 	const form = useForm<{ username: string; password: string }>();
 	return (
-		<form className='p-6 bg-slate-300 w-full max-w-3xl rounded-lg flex flex-col gap-4'>
+		<form className='p-6 border w-full max-w-3xl rounded-lg flex flex-col gap-4'>
 			<h1 className='text-lg font-semibold'>{t("title")}</h1>
 			<div className='flex flex-col space-y-2'>
 				<Label htmlFor='username'>{t("username")}</Label>

@@ -32,7 +32,6 @@ const getApiProduct = async ({ page }: { page?: number }) => {
 		const skip = (page - 1) * parseInt(PAGE_LIMIT);
 		params.set("skip", skip.toString());
 	}
-	console.log("params", params.toString());
 	const res = await fetch(
 		`https://dummyjson.com/products?${params.toString()}`,
 		{}

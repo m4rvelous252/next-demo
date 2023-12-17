@@ -44,8 +44,6 @@ const NewProduct = () => {
 		},
 	});
 
-	console.log("errors", errors);
-
 	const onSubmit = async (data: Partial<Product>) => {
 		mutate(data);
 	};
