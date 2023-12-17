@@ -9,7 +9,6 @@ const LoginPage = () => {
 	const t = useTranslations("auth");
 	const params = useSearchParams();
 	const callbackUrl = params.get("callbackUrl") ?? "/";
-	console.log("callbackUrl", callbackUrl);
 	const form = useForm<{ username: string; password: string }>();
 	return (
 		<form className='p-6 bg-slate-700 rounded-lg'>

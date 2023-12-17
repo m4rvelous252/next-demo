@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
+import ClientProvider from "@/providers/client-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,9 +29,11 @@ export default async function RootLayout({
 		<html lang={locale}>
 			<body className={inter.className}>
 				<NextIntlClientProvider messages={messages}>
-					<main className='flex min-h-screen flex-col items-center justify-between p-24'>
-						{children}
-					</main>
+					<ClientProvider>
+						<main className='flex min-h-screen flex-col items-center justify-between p-8 lg:p-24'>
+							{children}
+						</main>
+					</ClientProvider>
 				</NextIntlClientProvider>
 			</body>
 		</html>
