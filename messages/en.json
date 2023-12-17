@@ -11,5 +11,17 @@
 	},
 	"product": {
 		"title": "Product"
+	},
+	"next": "Next",
+	"prev": "Previous",
+	"newProduct": {
+		"heading": "New Product",
+		"title": "Title",
+		"brand": "Brand",
+		"price": "Price",
+		"buttonText": "Create Product"
+	},
+	"productList": {
+		"heading": "Product List"
 	}
 }

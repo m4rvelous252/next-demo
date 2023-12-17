@@ -3,6 +3,7 @@
 import ProductGrid from "@/components/ProductGrid";
 import { Button } from "@/components/ui/button";
 import { useQuery } from "@tanstack/react-query";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { z } from "zod";
 
@@ -11,15 +12,15 @@ const PAGE_LIMIT = "10";
 export const productSchema = z.object({
 	id: z.number(),
 	title: z.string(),
-	description: z.string(),
-	price: z.number(),
-	discountPercentage: z.number(),
-	rating: z.number(),
-	stock: z.number(),
+	description: z.string().optional(),
+	price: z.union([z.number(), z.string()]),
+	discountPercentage: z.number().optional(),
+	rating: z.number().optional(),
+	stock: z.number().optional(),
 	brand: z.string(),
-	category: z.string(),
-	thumbnail: z.string(),
-	images: z.array(z.string()),
+	category: z.string().optional(),
+	thumbnail: z.string().optional(),
+	images: z.array(z.string()).optional(),
 });
 
 export type Product = z.infer<typeof productSchema>;
@@ -49,6 +50,7 @@ const getApiProduct = async ({ page }: { page?: number }) => {
 };
 
 const ApiProduct = () => {
+	const t = useTranslations();
 	const [page, setPage] = useState(1);
 	const { data, isError, isLoading } = useQuery({
 		queryKey: ["api-products", { page }],
@@ -62,9 +64,9 @@ const ApiProduct = () => {
 		<div className='grid gap-2'>
 			<div className='flex gap-2'>
 				<Button onClick={() => setPage(page - 1)} disabled={page === 1}>
-					Previous
+					{t("prev")}
 				</Button>
-				<Button onClick={() => setPage(page + 1)}>Next</Button>
+				<Button onClick={() => setPage(page + 1)}>{t("next")}</Button>
 			</div>
 			<ProductGrid products={data ?? []} />
 		</div>

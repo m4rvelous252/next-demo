@@ -8,9 +8,9 @@ export default async function Home() {
 	const t = await getTranslations();
 
 	return (
-		<div className='flex flex-col gap-2'>
-			<h1 className='text-lg font-semibold'>{t("authorized")}</h1>
-			<p>
+		<div className='flex flex-col gap-2 w-full'>
+			<h1 className='text-3xl font-bold'>{t("authorized")}</h1>
+			<p className='text-xl'>
 				{t("greeting")} {session?.user.firstName}
 			</p>
 			<Link href={"/product"} className=''>

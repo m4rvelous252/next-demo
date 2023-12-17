@@ -11,5 +11,17 @@
 	},
 	"product": {
 		"title": "Sản phẩm"
+	},
+	"next": "Trang tiếp",
+	"prev": "Trang trước",
+	"newProduct": {
+		"heading": "Sản phẩm mới",
+		"title": "Tên sản phẩm",
+		"brand": "Thương hiệu",
+		"price": "Giá",
+		"buttonText": "Tạo sản phẩm"
+	},
+	"productList": {
+		"heading": "Danh sách sản phẩm"
 	}
 }

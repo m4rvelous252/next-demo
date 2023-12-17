@@ -13,7 +13,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
 			<div className='relative w-full h-48 rounded-sm overflow-hidden'>
 				<Image
 					alt={product.title}
-					src={product.thumbnail}
+					src={product.thumbnail ?? ""}
 					fill
 					className='object-cover'
 				/>
