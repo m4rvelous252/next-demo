@@ -11,7 +11,7 @@ export default async function Home() {
 	return (
 		<div className='flex flex-col gap-2 w-full'>
 			<h1 className='text-3xl font-bold'>{t("authorized")}</h1>
-			<p className='text-xl'>
+			<p data-test-id='greeting' className='text-xl'>
 				{t("greeting")} {session?.user.firstName}
 			</p>
 			<Button asChild className='w-fit' variant={"outline"}>

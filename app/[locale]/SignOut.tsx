@@ -7,7 +7,10 @@ import { useTranslations } from "next-intl";
 const SignOut = () => {
 	const t = useTranslations("auth");
 	return (
-		<Button onClick={() => signOut()} className='px-4 py-3 rounded w-fit'>
+		<Button
+			onClick={() => signOut()}
+			type='button'
+			className='px-4 py-3 rounded w-fit'>
 			{" "}
 			{t("logout")}
 		</Button>

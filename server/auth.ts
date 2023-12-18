@@ -37,6 +37,7 @@ export const authOptions = {
 					}),
 				});
 				const user = await res.json();
+				if (user.message) return null;
 				if (user) return user;
 				return null;
 			},

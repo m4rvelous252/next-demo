@@ -60,7 +60,7 @@ const ApiProduct = () => {
 	if (isError) return <div>Error</div>;
 
 	return (
-		<div className='grid gap-2'>
+		<div className='grid gap-2' data-test-id='api-product'>
 			<div className='flex gap-2'>
 				<Button onClick={() => setPage(page - 1)} disabled={page === 1}>
 					{t("prev")}

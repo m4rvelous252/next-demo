@@ -50,6 +50,7 @@ const NewProduct = () => {
 	return (
 		<>
 			<form
+				data-test-id='new-product-form'
 				onSubmit={handleSubmit(onSubmit)}
 				className='flex flex-col p-6 border rounded gap-2 max-w-xl'>
 				<h2 className='text-xl font-semibold'>{t("newProduct.heading")}</h2>
