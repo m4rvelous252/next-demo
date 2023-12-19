@@ -12,13 +12,13 @@ describe("Product Page", () => {
 		cy.get("h1").should("contain", "Product");
 	});
 
-	it("displays the new product form", () => {
-		// Check that the NewProduct component is displayed
-		cy.get('[data-test-id="new-product-form"]').should("be.visible");
-	});
-
 	it("displays the api product list", () => {
 		// Check that the ApiProduct component is displayed
 		cy.get('[data-test-id="api-product"]').should("be.visible");
+	});
+
+	it("should go to add product page when click on link", () => {
+		cy.get("a[href='/add-product']").click();
+		cy.url().should("include", "/add-product");
 	});
 });

@@ -8,7 +8,8 @@
 		"password": "Password",
 		"login": "Login",
 		"logout": "Logout",
-    "error": "Invalid username or password"
+		"error": "Invalid username or password",
+		"required": "This field is required"
 	},
 	"product": {
 		"title": "Product"

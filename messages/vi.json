@@ -8,7 +8,8 @@
 		"password": "Mật khẩu",
 		"login": "Đăng nhập",
 		"logout": "Đăng xuất",
-		"error": "Tên người dùng hoặc mật khẩu không đúng"
+		"error": "Tên người dùng hoặc mật khẩu không đúng",
+		"required": "Trường này là bắt buộc"
 	},
 	"product": {
 		"title": "Sản phẩm"

@@ -1,3 +1,4 @@
+import { expect } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
 import ProductGrid from "./ProductGrid";
 import { Product } from "@/app/[locale]/product/ApiProduct";

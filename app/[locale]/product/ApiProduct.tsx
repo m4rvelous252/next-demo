@@ -4,6 +4,7 @@ import ProductGrid from "@/components/ProductGrid";
 import { Button } from "@/components/ui/button";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 import { useState } from "react";
 import { z } from "zod";
 
@@ -61,11 +62,18 @@ const ApiProduct = () => {
 
 	return (
 		<div className='grid gap-2' data-test-id='api-product'>
-			<div className='flex gap-2'>
-				<Button onClick={() => setPage(page - 1)} disabled={page === 1}>
-					{t("prev")}
+			<div className='flex justify-between'>
+				<div className='flex gap-2'>
+					<Button onClick={() => setPage(page - 1)} disabled={page === 1}>
+						{t("prev")}
+					</Button>
+					<Button onClick={() => setPage(page + 1)}>{t("next")}</Button>
+				</div>
+				<Button asChild>
+					<Link date-testid='go-to-add-product' href={"/add-product"}>
+						Add Product
+					</Link>
 				</Button>
-				<Button onClick={() => setPage(page + 1)}>{t("next")}</Button>
 			</div>
 			<ProductGrid products={data ?? []} />
 		</div>

@@ -66,7 +66,11 @@ const NewProduct = () => {
 					})}
 				/>
 				{errors.title && (
-					<p className='text-red-500 mb-2 text-xs'>{errors.title.message}</p>
+					<p
+						className='text-red-500 mb-2 text-xs'
+						data-test-id='validation-error'>
+						{errors.title.message}
+					</p>
 				)}
 				<Label htmlFor='brand'>{t("newProduct.brand")}</Label>
 				<Input
@@ -80,7 +84,11 @@ const NewProduct = () => {
 					})}
 				/>
 				{errors.brand && (
-					<p className='text-red-500 mb-2 text-xs'>{errors.brand.message}</p>
+					<p
+						className='text-red-500 mb-2 text-xs'
+						data-test-id='validation-error'>
+						{errors.brand.message}
+					</p>
 				)}
 				<Label htmlFor='price'>{t("newProduct.price")}</Label>
 				<Input
@@ -94,7 +102,11 @@ const NewProduct = () => {
 					})}
 				/>
 				{errors.price && (
-					<p className='text-red-500 mb-2 text-xs'>{errors.price.message}</p>
+					<p
+						className='text-red-500 mb-2 text-xs'
+						data-test-id='validation-error'>
+						{errors.price.message}
+					</p>
 				)}
 				<Button type='submit'>
 					{isPending ? <Spinner /> : t("newProduct.buttonText")}
@@ -110,9 +122,13 @@ const NewProduct = () => {
 							<div
 								key={product.id}
 								className='flex flex-col gap-1 p-2 border rounded-sm'>
-								<p className='text-lg font-medium'>{product.title}</p>
-								<p>{product.brand}</p>
-								<p>
+								<p
+									className='text-lg font-medium'
+									data-test-id='new-product-title'>
+									{product.title}
+								</p>
+								<p data-test-id='new-product-brand'>{product.brand}</p>
+								<p data-test-id='new-product-price'>
 									{Number(product.price).toLocaleString("en", {
 										style: "currency",
 										currency: "USD",

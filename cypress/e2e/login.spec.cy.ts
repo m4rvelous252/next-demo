@@ -33,4 +33,13 @@ describe("Login", () => {
 			"Invalid username or password"
 		);
 	});
+
+	it("shows an error message when required fields are empty", () => {
+		// Click the submit button
+		cy.get('button[type="submit"]').click();
+		cy.get('[data-test-id="validation-error"]').should(
+			"contain",
+			"This field is required"
+		);
+	});
 });

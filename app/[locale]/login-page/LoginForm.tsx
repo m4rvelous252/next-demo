@@ -6,11 +6,13 @@ import { useForm } from "react-hook-form";
 
 interface LoginFormProps {
 	onSubmit: (data: { username: string; password: string }) => void;
+	error?: string;
 }
 
-const LoginForm = ({ onSubmit }: LoginFormProps) => {
+const LoginForm = ({ onSubmit, error }: LoginFormProps) => {
 	const t = useTranslations("auth");
 	const form = useForm<{ username: string; password: string }>();
+	const { errors } = form.formState;
 	return (
 		<form
 			onSubmit={form.handleSubmit(onSubmit)}
@@ -24,8 +26,18 @@ const LoginForm = ({ onSubmit }: LoginFormProps) => {
 					data-testid='username-input'
 					id='username'
 					type='text'
-					{...form.register("username", { required: true })}
+					{...form.register("username", {
+						required: {
+							value: true,
+							message: "required",
+						},
+					})}
 				/>
+				{errors.username && (
+					<p data-test-id='validation-error' className='text-red-500'>
+						{t("required")}
+					</p>
+				)}
 			</div>
 			<div className='flex flex-col space-y-2'>
 				<Label htmlFor='password'>{t("password")}</Label>
@@ -36,7 +48,17 @@ const LoginForm = ({ onSubmit }: LoginFormProps) => {
 					{...form.register("password", { required: true })}
 					className='text-black'
 				/>
+				{errors.username && (
+					<p data-test-id='validation-error' className='text-red-500'>
+						{t("required")}
+					</p>
+				)}
 			</div>
+			{error && (
+				<p data-test-id='login-error' className='text-red-500'>
+					{t("error")}
+				</p>
+			)}
 			<Button
 				type='submit'
 				data-testid='submit-button'
