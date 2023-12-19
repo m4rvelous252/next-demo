@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="border p-6 rounded shadow flex flex-col"
+    data-testid="product-card"
+  >
+    <h3
+      class="text-xl font-semibold"
+    >
+      Test Product
+    </h3>
+    <h6
+      class="mb-4"
+    >
+      Test Brand
+    </h6>
+    <div
+      class="relative w-full h-48 rounded-sm overflow-hidden"
+    >
+      <img
+        alt="Test Product"
+        class="object-cover"
+        data-nimg="fill"
+        decoding="async"
+        loading="lazy"
+        sizes="100vw"
+        src="/_next/image?url=https%3A%2F%2Fplus.unsplash.com%2Fpremium_photo-1679470210717-97fc30968fdf%3Fq%3D80%26w%3D1974%26auto%3Dformat%26fit%3Dcrop%26ixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D&w=3840&q=75"
+        srcset="/_next/image?url=https%3A%2F%2Fplus.unsplash.com%2Fpremium_photo-1679470210717-97fc30968fdf%3Fq%3D80%26w%3D1974%26auto%3Dformat%26fit%3Dcrop%26ixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fplus.unsplash.com%2Fpremium_photo-1679470210717-97fc30968fdf%3Fq%3D80%26w%3D1974%26auto%3Dformat%26fit%3Dcrop%26ixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fplus.unsplash.com%2Fpremium_photo-1679470210717-97fc30968fdf%3Fq%3D80%26w%3D1974%26auto%3Dformat%26fit%3Dcrop%26ixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fplus.unsplash.com%2Fpremium_photo-1679470210717-97fc30968fdf%3Fq%3D80%26w%3D1974%26auto%3Dformat%26fit%3Dcrop%26ixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fplus.unsplash.com%2Fpremium_photo-1679470210717-97fc30968fdf%3Fq%3D80%26w%3D1974%26auto%3Dformat%26fit%3Dcrop%26ixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fplus.unsplash.com%2Fpremium_photo-1679470210717-97fc30968fdf%3Fq%3D80%26w%3D1974%26auto%3Dformat%26fit%3Dcrop%26ixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fplus.unsplash.com%2Fpremium_photo-1679470210717-97fc30968fdf%3Fq%3D80%26w%3D1974%26auto%3Dformat%26fit%3Dcrop%26ixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fplus.unsplash.com%2Fpremium_photo-1679470210717-97fc30968fdf%3Fq%3D80%26w%3D1974%26auto%3Dformat%26fit%3Dcrop%26ixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D&w=3840&q=75 3840w"
+        style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+      />
+    </div>
+    <p
+      class="mt-4"
+    >
+      $9.99
+    </p>
+    <p
+      class="mt-2"
+    >
+      Test description
+    </p>
+  </div>
+</DocumentFragment>
+`;

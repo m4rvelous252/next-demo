@@ -12,6 +12,9 @@
 	"product": {
 		"title": "Sản phẩm"
 	},
+	"addProduct": {
+		"title": "Thêm sản phẩm"
+	},
 	"next": "Trang tiếp",
 	"prev": "Trang trước",
 	"newProduct": {

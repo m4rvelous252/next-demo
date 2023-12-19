@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Product, productSchema } from "./ApiProduct";
+import { Product, productSchema } from "../product/ApiProduct";
 import { useForm } from "react-hook-form";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";

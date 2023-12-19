@@ -12,6 +12,9 @@
 	"product": {
 		"title": "Product"
 	},
+	"addProduct": {
+		"title": "Add Product"
+	},
 	"next": "Next",
 	"prev": "Previous",
 	"newProduct": {
