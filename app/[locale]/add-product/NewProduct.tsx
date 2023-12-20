@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Product, productSchema } from "../product/ApiProduct";
 import { useForm } from "react-hook-form";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -9,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { useMutation } from "@tanstack/react-query";
 import Spinner from "@/components/ui/spinner";
 import { useTranslations } from "next-intl";
+import { Product, productSchema } from "@/lib/types/product.type";
 
 const createProduct = async (product: Partial<Product>) => {
 	const res = await fetch("https://dummyjson.com/products/add", {

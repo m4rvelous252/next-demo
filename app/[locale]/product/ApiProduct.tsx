@@ -2,6 +2,7 @@
 
 import ProductGrid from "@/components/ProductGrid";
 import { Button } from "@/components/ui/button";
+import { productSchema } from "@/lib/types/product.type";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
@@ -9,22 +10,6 @@ import { useState } from "react";
 import { z } from "zod";
 
 const PAGE_LIMIT = "10";
-
-export const productSchema = z.object({
-	id: z.number(),
-	title: z.string(),
-	description: z.string().optional(),
-	price: z.union([z.number(), z.string()]),
-	discountPercentage: z.number().optional(),
-	rating: z.number().optional(),
-	stock: z.number().optional(),
-	brand: z.string(),
-	category: z.string().optional(),
-	thumbnail: z.string().optional(),
-	images: z.array(z.string()).optional(),
-});
-
-export type Product = z.infer<typeof productSchema>;
 
 const getApiProduct = async ({ page }: { page?: number }) => {
 	const params = new URLSearchParams();

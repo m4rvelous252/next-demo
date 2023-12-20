@@ -1,6 +1,7 @@
 import { expect } from "@jest/globals";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import ProductCard from "./ProductCard";
+import { render } from "@/__test__/utils";
 
 const mockProduct = {
 	id: 1,
