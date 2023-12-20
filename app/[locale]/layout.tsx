@@ -4,6 +4,8 @@ import "./globals.css";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import ClientProvider from "@/lib/providers/client-provider";
+import { cn } from "@/lib/utils";
+import LanguageChanger from "@/app/[locale]/LanguageChanger";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,12 +29,17 @@ export default async function RootLayout({
 	}
 	return (
 		<html lang={locale}>
-			<body className={inter.className}>
+			<body className={cn(inter.className, "relative")}>
 				<NextIntlClientProvider messages={messages}>
 					<ClientProvider>
-						<main className='flex min-h-screen flex-col items-center justify-between p-8 lg:p-24'>
-							{children}
-						</main>
+						<>
+							<header className='p-4'>
+								<LanguageChanger locale={locale} />
+							</header>
+							<main className='flex min-h-screen flex-col items-center justify-between p-8 lg:p-24'>
+								{children}
+							</main>
+						</>
 					</ClientProvider>
 				</NextIntlClientProvider>
 			</body>

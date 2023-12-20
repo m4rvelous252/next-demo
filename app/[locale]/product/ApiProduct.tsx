@@ -62,7 +62,7 @@ const ApiProduct = () => {
 
 	return (
 		<div className='grid gap-2' data-test-id='api-product'>
-			<div className='flex justify-between'>
+			<div className='flex justify-between gap-2 flex-wrap'>
 				<div className='flex gap-2'>
 					<Button onClick={() => setPage(page - 1)} disabled={page === 1}>
 						{t("prev")}
@@ -71,7 +71,7 @@ const ApiProduct = () => {
 				</div>
 				<Button asChild>
 					<Link date-testid='go-to-add-product' href={"/add-product"}>
-						Add Product
+						{t("addProduct.title")}
 					</Link>
 				</Button>
 			</div>

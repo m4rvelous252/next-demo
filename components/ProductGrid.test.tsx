@@ -34,6 +34,12 @@ const mockProducts = [
 ] satisfies Product[];
 
 describe("ProductGrid", () => {
+	test("renders 'No product' when products array is empty", () => {
+		render(<ProductGrid products={[]} />);
+
+		// Assert that the 'No product' message is rendered
+		expect(screen.getByText("No product")).toBeInTheDocument();
+	});
 	test("renders product cards for each product", () => {
 		render(<ProductGrid products={mockProducts} />);
 
