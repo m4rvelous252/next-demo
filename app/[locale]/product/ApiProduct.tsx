@@ -2,6 +2,7 @@
 
 import ProductGrid from "@/components/ProductGrid";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 import { productSchema } from "@/lib/types/product.type";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
@@ -42,7 +43,39 @@ const ApiProduct = () => {
 		queryFn: () => getApiProduct({ page }),
 	});
 
-	if (isLoading) return <div>Loading...</div>;
+	if (isLoading)
+		return (
+			<div className='grid grid-cols-auto-fit gap-4'>
+				<div className='border p-6 rounded shadow flex flex-col gap-2'>
+					<Skeleton className='h-[30px] w-[200px]' />
+					<Skeleton className='h-5 w-[100px]' />
+					<div className='relative w-full h-48 rounded-sm overflow-hidden'>
+						<Skeleton className='w-full h-full' />
+					</div>
+				</div>
+				<div className='border p-6 rounded shadow flex flex-col gap-2'>
+					<Skeleton className='h-[30px] w-[200px]' />
+					<Skeleton className='h-5 w-[100px]' />
+					<div className='relative w-full h-48 rounded-sm overflow-hidden'>
+						<Skeleton className='w-full h-full' />
+					</div>
+				</div>
+				<div className='border p-6 rounded shadow flex flex-col gap-2'>
+					<Skeleton className='h-[30px] w-[200px]' />
+					<Skeleton className='h-5 w-[100px]' />
+					<div className='relative w-full h-48 rounded-sm overflow-hidden'>
+						<Skeleton className='w-full h-full' />
+					</div>
+				</div>
+				<div className='border p-6 rounded shadow flex flex-col gap-2'>
+					<Skeleton className='h-[30px] w-[200px]' />
+					<Skeleton className='h-5 w-[100px]' />
+					<div className='relative w-full h-48 rounded-sm overflow-hidden'>
+						<Skeleton className='w-full h-full' />
+					</div>
+				</div>
+			</div>
+		);
 	if (isError) return <div>Error</div>;
 
 	return (
