@@ -15,6 +15,7 @@ const LoginForm = ({ onSubmit, error }: LoginFormProps) => {
 	const { errors } = form.formState;
 	return (
 		<form
+			data-testid='login-form'
 			onSubmit={form.handleSubmit(onSubmit)}
 			className='p-6 border w-full max-w-3xl rounded-lg flex flex-col gap-4'>
 			<h1 data-testid='form-title' className='text-lg font-semibold'>
@@ -46,7 +47,6 @@ const LoginForm = ({ onSubmit, error }: LoginFormProps) => {
 					id='password'
 					type='password'
 					{...form.register("password", { required: true })}
-					className='text-black'
 				/>
 				{errors.username && (
 					<p data-test-id='validation-error' className='text-red-500'>
@@ -55,7 +55,7 @@ const LoginForm = ({ onSubmit, error }: LoginFormProps) => {
 				)}
 			</div>
 			{error && (
-				<p data-test-id='login-error' className='text-red-500'>
+				<p data-testid='login-error' className='text-red-500'>
 					{t("error")}
 				</p>
 			)}

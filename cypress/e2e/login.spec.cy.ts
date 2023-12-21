@@ -28,7 +28,7 @@ describe("Login", () => {
 		cy.get('button[type="submit"]').click();
 
 		// Check that an error message is displayed
-		cy.get('[data-test-id="login-error"]').should(
+		cy.get('[data-testid="login-error"]').should(
 			"contain",
 			"Invalid username or password"
 		);

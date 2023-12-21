@@ -4,19 +4,21 @@ import ProductGrid from "@/components/ProductGrid";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { productSchema } from "@/lib/types/product.type";
+import { useRouter } from "@/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { z } from "zod";
 
 const PAGE_LIMIT = "10";
 
-const getApiProduct = async ({ page }: { page?: number }) => {
+const getApiProduct = async ({ page }: { page?: string }) => {
 	const params = new URLSearchParams();
 	params.set("limit", PAGE_LIMIT);
 	if (page) {
-		const skip = (page - 1) * parseInt(PAGE_LIMIT);
+		const skip = (Number(page) - 1) * parseInt(PAGE_LIMIT);
 		params.set("skip", skip.toString());
 	}
 	const res = await fetch(
@@ -37,7 +39,10 @@ const getApiProduct = async ({ page }: { page?: number }) => {
 
 const ApiProduct = () => {
 	const t = useTranslations();
-	const [page, setPage] = useState(1);
+	const searchParams = useSearchParams();
+	const page = searchParams.get("page") ?? "1";
+	const router = useRouter();
+	// const [page, setPage] = useState(1);
 	const { data, isError, isLoading } = useQuery({
 		queryKey: ["api-products", { page }],
 		queryFn: () => getApiProduct({ page }),
@@ -48,10 +53,15 @@ const ApiProduct = () => {
 		<div className='grid gap-2' data-test-id='api-product'>
 			<div className='flex justify-between gap-2 flex-wrap'>
 				<div className='flex gap-2'>
-					<Button onClick={() => setPage(page - 1)} disabled={page === 1}>
+					<Button
+						onClick={() => router.replace(`/product?page=${Number(page) - 1}`)}
+						disabled={page === "1"}>
 						{t("prev")}
 					</Button>
-					<Button onClick={() => setPage(page + 1)}>{t("next")}</Button>
+					<Button
+						onClick={() => router.replace(`/product?page=${Number(page) + 1}`)}>
+						{t("next")}
+					</Button>
 				</div>
 				<Button asChild>
 					<Link date-testid='go-to-add-product' href={"/add-product"}>
