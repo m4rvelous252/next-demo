@@ -42,40 +42,6 @@ const ApiProduct = () => {
 		queryKey: ["api-products", { page }],
 		queryFn: () => getApiProduct({ page }),
 	});
-
-	if (isLoading)
-		return (
-			<div className='grid grid-cols-auto-fit gap-4'>
-				<div className='border p-6 rounded shadow flex flex-col gap-2'>
-					<Skeleton className='h-[30px] w-[200px]' />
-					<Skeleton className='h-5 w-[100px]' />
-					<div className='relative w-full h-48 rounded-sm overflow-hidden'>
-						<Skeleton className='w-full h-full' />
-					</div>
-				</div>
-				<div className='border p-6 rounded shadow flex flex-col gap-2'>
-					<Skeleton className='h-[30px] w-[200px]' />
-					<Skeleton className='h-5 w-[100px]' />
-					<div className='relative w-full h-48 rounded-sm overflow-hidden'>
-						<Skeleton className='w-full h-full' />
-					</div>
-				</div>
-				<div className='border p-6 rounded shadow flex flex-col gap-2'>
-					<Skeleton className='h-[30px] w-[200px]' />
-					<Skeleton className='h-5 w-[100px]' />
-					<div className='relative w-full h-48 rounded-sm overflow-hidden'>
-						<Skeleton className='w-full h-full' />
-					</div>
-				</div>
-				<div className='border p-6 rounded shadow flex flex-col gap-2'>
-					<Skeleton className='h-[30px] w-[200px]' />
-					<Skeleton className='h-5 w-[100px]' />
-					<div className='relative w-full h-48 rounded-sm overflow-hidden'>
-						<Skeleton className='w-full h-full' />
-					</div>
-				</div>
-			</div>
-		);
 	if (isError) return <div>Error</div>;
 
 	return (
@@ -93,7 +59,40 @@ const ApiProduct = () => {
 					</Link>
 				</Button>
 			</div>
-			<ProductGrid products={data ?? []} />
+			{isLoading ? (
+				<div className='grid grid-cols-auto-fit gap-4'>
+					<div className='border p-6 rounded shadow flex flex-col gap-2'>
+						<Skeleton className='h-[30px] w-[200px]' />
+						<Skeleton className='h-5 w-[100px]' />
+						<div className='relative w-full h-48 rounded-sm overflow-hidden'>
+							<Skeleton className='w-full h-full' />
+						</div>
+					</div>
+					<div className='border p-6 rounded shadow flex flex-col gap-2'>
+						<Skeleton className='h-[30px] w-[200px]' />
+						<Skeleton className='h-5 w-[100px]' />
+						<div className='relative w-full h-48 rounded-sm overflow-hidden'>
+							<Skeleton className='w-full h-full' />
+						</div>
+					</div>
+					<div className='border p-6 rounded shadow flex flex-col gap-2'>
+						<Skeleton className='h-[30px] w-[200px]' />
+						<Skeleton className='h-5 w-[100px]' />
+						<div className='relative w-full h-48 rounded-sm overflow-hidden'>
+							<Skeleton className='w-full h-full' />
+						</div>
+					</div>
+					<div className='border p-6 rounded shadow flex flex-col gap-2'>
+						<Skeleton className='h-[30px] w-[200px]' />
+						<Skeleton className='h-5 w-[100px]' />
+						<div className='relative w-full h-48 rounded-sm overflow-hidden'>
+							<Skeleton className='w-full h-full' />
+						</div>
+					</div>
+				</div>
+			) : (
+				<ProductGrid products={data ?? []} />
+			)}
 		</div>
 	);
 };
